@@ -1,0 +1,30 @@
+{% extends '../layout.twig' %}
+{% block content %}
+    <br>
+    <br>
+    <div class="row">
+        <div class="panel panel-primary col-lg-4 col-lg-push-4">
+            <div class="panel-heading">{{ key }}</div>
+            <div class="panel-body">
+                <p> <span class="badge">Name</span><span class="pull-right"> {{ pc.name }} </span> </p>
+
+                <p><span class="badge">Manufacturer</span><span class="pull-right"> {{ pc.manufacturer }}</span></p>
+
+                <p><span class="badge">Price</span><span class="pull-right">{{ pc.price }}</span></p>
+
+                <p><span class="badge">Stock</span><span class="pull-right"> {{ pc.stock }}</span></p>
+
+                <ul class="list-group">
+                    <li class="list-group-item active">Options</li>
+                    <li class="list-group-item">{{ pc.options[0] }}</li>
+                    <li class="list-group-item">{{ pc.options[1] }}</li>
+                    <li class="list-group-item">{{ pc.options[2] }}</li>
+                </ul>
+                    <a class="btn btn-primary btn-large" href="/">
+                        Retour
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

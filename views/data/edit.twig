@@ -1,0 +1,35 @@
+{% extends '../layout.twig' %}
+
+{% block content %}
+    <div class="col-lg-push-2 col-lg-6">
+        <form action="/edit/{{ key }}" method="post">
+            <div class="form-group">
+                <label for="name" class="col-xs-2 control-label">Name</label>
+                <input type="text" placeholder="{{ pc.name }}" class="form-control" name="name"
+                       value="{{ pc.name }}"></td>
+                <label for="manufacturer" class="col-xs-2 control-label">Manufacturer</label>
+                <input type="text" placeholder="{{ pc.manufacturer }}" class="form-control" name="manufacturer"
+                       value="{{ pc.manufacturer }}"></td>
+                <label for="price" class="col-xs-2 control-label">Price</label>
+                <input type="number" placeholder="{{ pc.price }}" class="form-control" name="price"
+                       value="{{ pc.price }}"></td>
+                <label for="stock" class="col-xs-2 control-label">Stock</label>
+                <input type="number" placeholder="{{ pc.stock }}" class="form-control" name="stock"
+                       value="{{ pc.stock }}"></td>
+            </div>
+            <div class="form-group">
+                <label for="options" class="col-xs-2 control-label">Options</label>
+                <input type="text" placeholder="{{ pc.options[0] }}" class="form-control" name="options[0]"
+                       value="{{ pc.options[0] }}"></td>
+                <input type="text" placeholder="{{ pc.options[1] }}" class="form-control" name="options[1]"
+                       value="{{ pc.options[1] }}"></td>
+                <input type="text" placeholder="{{ pc.options[2] }}" class="form-control" name="options[2]"
+                       value="{{ pc.options[2] }}"></td>
+            </div>
+            <button type="submit" class="btn btn-primary btn-large">Confirmer <i class="glyphicon glyphicon-save"></i></button>
+            <a class="btn btn-primary btn-large pull-right" href="/">
+                Retour
+            </a>
+        </form>
+    </div>
+{% endblock %}

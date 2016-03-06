@@ -1,0 +1,32 @@
+{% extends '../layout.twig' %}
+ {% block content %}
+     <div class="col-lg-8 col-lg-push-2">
+         <a href="/add" class="btn btn-primary btn-large">Ajouter <i class="glyphicon glyphicon-plus"></i></a>
+         <table class="table">
+             <thead>
+             <tr>
+                 <th>Date Formation</th>
+                 <th>Formation</th>
+                 <th>Formateur</th>
+             </tr>
+             </thead>
+             <tbody>
+             {% for f in formateur %}
+                 <tr>
+                     <td>{{ f.date }}</td>
+                     <td>{{ f.formation.nom }}</td>
+                     <td>{{ f.formation.Formateur }}</td>
+                     <td>
+                         <a href="/show/{{ f.id }}" class="btn btn-primary btn-xs"><i
+                                     class="glyphicon glyphicon-eye-open"></i></a>
+                         <a href="/edit/{{ f.id }}" class="btn btn-default btn-xs"><i
+                                     class="glyphicon glyphicon-pencil"></i></a>
+                         <a href="/remove/{{ f.id }}" class="btn btn-danger btn-xs"><i
+                                     class="glyphicon glyphicon-trash"></i></a>
+                     </td>
+                 </tr>
+             {% endfor %}
+             </tbody>
+         </table>
+     </div>
+ {% endblock %}
